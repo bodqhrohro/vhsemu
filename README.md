@@ -6,9 +6,9 @@ The goal of the project is an accurate digital representation of a physical VHS 
 
 The tracks are packed on the tape using the helical scan technique:
 
-![static/Magnetic_recording_diagram_Us004390906-002.png]
+![Magnetic recording diagram](static/Magnetic_recording_diagram_Us004390906-002.png)
 
-![static/VHS-diagonal-helical-recording.jpg]
+![VHS diagonal helical recording](static/VHS-diagonal-helical-recording.jpg)
 
 Each diagonal track corresponds to one complete television field (which is, only even or only odd rows of a frame). Despite it's not very correct for slant-azimuth recording, the tracks may still be considered as having safety intervals between, filled with noise.
 
