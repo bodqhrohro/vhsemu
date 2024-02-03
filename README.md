@@ -46,3 +46,7 @@ More efficient implementations for certain effects may be developed later after 
 * Partially rewritten tape mode (the erasing head is orthogonal against the tape, so several frames gradually reveal from noise)
 * Tape degradation (tracking errors, tape misalignment, speed instability, etc.)
 * etc.
+
+# Useful links
+
+* https://github.com/oyvindln/vhs-decode
