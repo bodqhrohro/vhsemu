@@ -209,3 +209,57 @@ On a VHS tape, the tracks are arranged to accommodate different types of informa
    - A small portion of the tape is typically unused along the opposite edge to provide mechanical stability.
 
 The linear audio and control tracks are longitudinally oriented along the tape edges, while the video tracks are recorded diagonally due to the helical-scan method.
+
+---
+
+### **Digital Sampling Resolution (Based on Nyquist-Shannon)**
+The Nyquist-Shannon theorem states that the sampling frequency must be at least **twice the highest frequency** of the signal to accurately represent it.
+
+#### 1. **Bandwidth of VHS Video Signal**
+   - Luminance signal (brightness): Bandwidth is approximately **3 MHz**.
+   - Chrominance signal (color): Downconverted and bandwidth-limited to around **0.5 MHz**.
+   - Hi-Fi Stereo Audio (if present): Can extend up to **20 kHz**.
+
+To accurately digitize the luminance signal at **3 MHz**, the sampling frequency must be:
+   $$ f_s \geq 2 \times 3 \, \text{MHz} = 6 \, \text{MHz} $$
+
+This means at least **6 million samples per second** are needed for luminance, while the chrominance signal requires a much lower sampling rate (~1 MHz). Hi-Fi stereo audio would need a **minimum of 44 kHz**, similar to audio CDs.
+
+---
+
+#### 2. **Samples Per Tape Width**
+The **tape width** is **12.7 mm**, but only the video tracks (each **58 microns wide**) store the signal. To capture the magnetic signal across the entire tape width, a sampling density must:
+   $$ \text{Nyquist sampling density} \approx 2 \times (\text{track width}) = 2 \times 58 \, \mu\text{m} = 116 \, \mu\text{m sampling intervals} $$
+
+For the **full tape width (12.7 mm)**:
+   $$ \text{Samples per tape width} = \frac{12.7 \, \text{mm}}{116 \, \mu\text{m}} \approx 109 samples $$
+
+---
+
+#### 3. **Samples Per Centimeter of Tape Longitudinally**
+Tape speed during standard playback is about **3.335 cm/second (NTSC)**. For a sampling frequency of **6 MHz**:
+   $$ \text{Samples per cm} = \frac{\text{sampling frequency}}{\text{tape speed}} = \frac{6 \times 10^6 \, \text{samples/sec}}{3.335 \, \text{cm/sec}} \approx 1.8 \, \text{million samples per cm} $$
+
+This ensures the digital representation captures all magnetic data with sufficient resolution.
+
+---
+
+### **Bit Depth: 8 Bits vs. 16 Bits**
+- **8 Bits (256 Levels)**: May suffice for capturing basic luminance signal changes but would struggle with low-noise reproduction and high-quality audio. It might result in quantization noise, especially for Hi-Fi stereo audio.
+- **16 Bits (65,536 Levels)**: Provides superior precision and dynamic range for audio and video signals, minimizing quantization errors. This would be more suitable for faithfully reproducing VHS signals, especially in archival settings.
+
+---
+
+### **Approximate Physical Size of Magnetic Domains**
+VHS tapes use an **iron oxide** (Fe₂O₃) or chromium dioxide (CrO₂) magnetic layer. The magnetic domains on a VHS tape are approximately:
+   - **Microscale size**: Around **1 micron or less** in length.
+   - A large number of these domains work together to represent a single magnetic signal change.
+
+---
+
+### **Summary**
+- **Nyquist rate for video**: At least **6 MHz** sampling frequency for luminance.
+- **Samples per tape width**: ~109 samples.
+- **Samples per cm of tape longitudinally**: ~1.8 million samples.
+- **Bit depth**: While 8 bits might be functional, **16 bits is ideal** for high-fidelity reproduction.
+- **Magnetic domains**: About **1 micron in size**.
